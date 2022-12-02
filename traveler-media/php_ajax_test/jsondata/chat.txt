@@ -1,0 +1,3 @@
+lore: ciaooo
+marco: ciao lore
+lore: ok
