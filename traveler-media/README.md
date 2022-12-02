@@ -1,3 +1,10 @@
+# How to run the the website:
+  - Install xampp 
+  - Open phpmyadmin and create a table named user with 2 columns -> username and password
+  - Place the contenents of php_ajax_test inside the default folder of xampp server
+  - run the xampp server
+  - open inside the browser a localhost page
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
