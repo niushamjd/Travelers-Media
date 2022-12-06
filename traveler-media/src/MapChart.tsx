@@ -1,4 +1,7 @@
-import React from "react";
+
+import { useState } from 'react';
+
+import "./styles.css"
 import {
   ComposableMap,
   Geographies,
@@ -44,12 +47,17 @@ const markers = [
 ];
 
 const MapChart = () => {
+  const [scala, setscala] = useState(400);
+  const [up, setup] = useState(-50);
+  const [direction, setDirection] = useState(-20);
   return (
+    <div className="Mcontainer">
+      <div className='MapDiv'>
     <ComposableMap
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [-20, -50, 0],
-        scale: 300
+        rotate: [direction, up, 0],
+        scale: scala
       }}
     >
       <Geographies geography={geoUrl}>
@@ -76,7 +84,15 @@ const MapChart = () => {
           </text>
         </Marker>
       ))}
+      
     </ComposableMap>
+    </div>
+    <div style={{marginLeft:"17px"}}><button onClick={() => setup(up - 4)}>↑</button></div>
+    <div><button onClick={() => setDirection(direction + 10)}>←</button><button onClick={() => setDirection(direction -10)}>→</button></div>
+    <div style={{marginLeft:"16px"}}><button onClick={() => setup(up + 4)}>↓</button></div>
+    <div style={{marginLeft:"5px"}}><button onClick={() => setscala(scala - 100)}>-</button><button onClick={() => setscala(scala + 100)}>+</button></div>
+   
+    </div>
   );
 };
 
