@@ -1,6 +1,5 @@
-
 import React from "react"
-import "./styles.css"
+import "../styles.css"
 export default function() {
   return (
     <div className="Auth-form-container">
@@ -28,8 +27,8 @@ export default function() {
               Submit
             </button>
           </div>
-          <p className="forgot-password text-right mt-2">
-            Forgot <a href="#">password?</a>
+          <p className="sign-up text-right mt-2">
+            Don't have an account? <a href="./SignUp">Sign Up</a>
           </p>
         </div>
       </form>

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Auth from "./Auth";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -15,7 +16,8 @@ import MapChart from "./MapChart";
       <div className="log">    
       <BrowserRouter>
       <Routes>
-        <Route index element={<Auth />} />
+        <Route path="*" element={<SignIn />} />
+        <Route path="SignUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
     </div>
