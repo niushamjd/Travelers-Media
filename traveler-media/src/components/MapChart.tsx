@@ -46,6 +46,9 @@ const markers = [
     { markerOffset: 4, name: "Berlin", coordinates: [13.25, 52.5] },
     { markerOffset: 4, name: "Edinburgh", coordinates: [-3.18, 55.95] },
 ];
+const clickedCity = (city: string) => {
+  console.log(city);
+};
 
 const MapChart = () => {
   return (
@@ -58,7 +61,7 @@ const MapChart = () => {
         scale: 1200
       }}
     >
-       <ZoomableGroup center={[0, 0]} zoom={9}>
+       <ZoomableGroup center={[20, 55]} zoom={0.6 }>
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies.map((geo) => (
@@ -72,7 +75,9 @@ const MapChart = () => {
         }
       </Geographies>
       {markers.map(({ name, coordinates, markerOffset }) => (
-        <Marker key={name} coordinates={coordinates as [number, number]}>
+        <Marker key={name} coordinates={coordinates as [number, number]}onClick={() => clickedCity(name)}
+
+        >
           <circle r={1.5} fill="#F00" stroke="#fff" strokeWidth={0} />
           <text
             textAnchor="middle"
