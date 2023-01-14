@@ -1,6 +1,12 @@
 import React from "react"
 import "../styles.css"
 export default function() {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log("submit")
+    
+  }
+
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">

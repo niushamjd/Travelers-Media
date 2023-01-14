@@ -1,0 +1,20 @@
+{
+  "name": "travelers-media",
+  "version": "1.0.0",
+  "description": "A website to find travelers in similar area",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niushamjd/Travelers-Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niushamjd/Travelers-Media/issues"
+  },
+  "homepage": "https://github.com/niushamjd/Travelers-Media#readme"
+}
