@@ -6,6 +6,7 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  ZoomableGroup,
   Marker
 } from "react-simple-maps";
 
@@ -47,19 +48,17 @@ const markers = [
 ];
 
 const MapChart = () => {
-  const [scala, setscala] = useState(400);
-  const [up, setup] = useState(-50);
-  const [direction, setDirection] = useState(-20);
   return (
-    <div className="Mcontainer">
-      <div className='MapDiv'>
     <ComposableMap
+    width={800}
+    height={800}
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [direction, up, 0],
-        scale: scala
+        rotate: [-10.0, -53.0, 0],
+        scale: 1200
       }}
     >
+       <ZoomableGroup center={[0, 0]} zoom={9}>
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies.map((geo) => (
@@ -84,15 +83,8 @@ const MapChart = () => {
           </text>
         </Marker>
       ))}
-      
+      </ZoomableGroup>
     </ComposableMap>
-    </div>
-    <div style={{marginLeft:"17px"}}><button onClick={() => setup(up - 4)}>↑</button></div>
-    <div><button onClick={() => setDirection(direction + 10)}>←</button><button onClick={() => setDirection(direction -10)}>→</button></div>
-    <div style={{marginLeft:"16px"}}><button onClick={() => setup(up + 4)}>↓</button></div>
-    <div style={{marginLeft:"5px"}}><button onClick={() => setscala(scala - 100)}>-</button><button onClick={() => setscala(scala + 100)}>+</button></div>
-   
-    </div>
   );
 };
 
