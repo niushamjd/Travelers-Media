@@ -45,9 +45,32 @@ const markers = [
     { markerOffset: 4, name: "Bern", coordinates: [7.28, 46.95] },
     { markerOffset: 4, name: "Berlin", coordinates: [13.25, 52.5] },
     { markerOffset: 4, name: "Edinburgh", coordinates: [-3.18, 55.95] },
+    { markerOffset: 4, name: "Belgrade", coordinates: [20.5, 44.8] },
+{ markerOffset: 4, name: "Skopje", coordinates: [21.43, 42] },
+{ markerOffset: 4, name: "Podgorica", coordinates: [19.26, 42.44] },
+{ markerOffset: 4, name: "Sarajevo", coordinates: [18.35, 43.52] },
+{ markerOffset: 4, name: "Vilnius", coordinates: [25.28, 54.68] },
+{ markerOffset: 4, name: "Riga", coordinates: [24.1, 56.95] },
+{ markerOffset: 4, name: "Tallinn", coordinates: [24.75, 59.44] },
+{ markerOffset: 4, name: "Kaunas", coordinates: [23.88, 54.89] },
+{ markerOffset: 4, name: "Gdansk", coordinates: [18.65, 54.35] },
+{ markerOffset: 4, name: "Krakow", coordinates: [19.94, 50.06] },
+{ markerOffset: 4, name: "Seville", coordinates: [-5.98, 37.38] },
+{ markerOffset: 4, name: "Valencia", coordinates: [-0.38, 39.47] },
+{ markerOffset: 4, name: "Barcelona", coordinates: [2.18, 41.38] },
+{ markerOffset: 4, name: "Malaga", coordinates: [-4.42, 36.72] },
+{ markerOffset: 4, name: "Thessaloniki", coordinates: [22.94, 40.64] },
+{ markerOffset: 4, name: "Belfast", coordinates: [-5.93, 54.59] },
+{ markerOffset: 4, name: "Galway", coordinates: [-9.07, 53.27] },
+{ markerOffset: 4, name: "Luxembourg City", coordinates: [6.13, 49.61] },
+{ markerOffset: 4, name: "San Marino", coordinates: [12.45, 43.93] },
+{ markerOffset: 4, name: "Vatican City", coordinates: [12.45, 41.9] }
 ];
 const clickedCity = (city: string) => {
   console.log(city);
+};
+const clickedCountry = (country: string) => {
+  console.log(country);
 };
 
 const MapChart = () => {
@@ -62,10 +85,13 @@ const MapChart = () => {
       }}
     >
        <ZoomableGroup center={[20, 55]} zoom={0.6 }>
-      <Geographies geography={geoUrl}>
+      <Geographies geography={geoUrl} >
         {({ geographies }) =>
           geographies.map((geo) => (
+            //console.log(geo.properties.geounit),
+            
             <Geography
+              onClick={() => clickedCountry(geo.properties.geounit)}
               key={geo.rsmKey}
               geography={geo}
               fill="#EAEAEC"
