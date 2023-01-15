@@ -1,6 +1,5 @@
 
-import { useState } from 'react';
-
+import 'reactjs-popup/dist/index.css';
 import "../styles.css"
 import {
   ComposableMap,
@@ -69,9 +68,25 @@ const markers = [
 const clickedCity = (city: string) => {
   console.log(city);
 };
+
+
 const clickedCountry = (country: string) => {
-  console.log(country);
+  let finalUrl= `https://restcountries.com/v3.1/name/${country}?fullText=true`;
+  console.log(finalUrl)
+  fetch (finalUrl)
+.then ( (response) => response .json ())
+.then ( (data) => {
+console. log (data [0]) ;
+console. log (data [0] .capital[0]) 
+console. log (Object.keys(data [0] .currencies)[0]);
+console. log (data [0] .currencies[Object.keys(data [0] .currencies)[0]] .name);
+console.log(Object.values(data[0].languages).toString().split(",").join(", "));
+})
+.catch ( (error) => {
+console. log (error) ;
+})
 };
+
 
 const MapChart = () => {
   return (
@@ -88,8 +103,6 @@ const MapChart = () => {
       <Geographies geography={geoUrl} >
         {({ geographies }) =>
           geographies.map((geo) => (
-            //console.log(geo.properties.geounit),
-            
             <Geography
               onClick={() => clickedCountry(geo.properties.geounit)}
               key={geo.rsmKey}
