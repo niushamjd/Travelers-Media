@@ -1,12 +1,16 @@
-import React from "react"
+import {useState,useEffect} from "react"
 import "../styles.css"
-export default function() {
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log("submit")
-    
-  }
-
+export default function(){
+  const [users, setUsers] = useState([])
+  const fetchData = () => {
+  fetch(`${process.env.REACT_APP_BACKEND}api/users`)
+  .then(res => res.json())
+  .then(data => setUsers(data));
+}
+useEffect(() => {
+  fetchData();
+}, []);
+console.log(users)
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">

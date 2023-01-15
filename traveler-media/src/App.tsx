@@ -4,21 +4,21 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom"
+import axios from "axios";
 
 
 import MapChart from "./components/MapChart";
 
 
  function App() {
+ 
   return (
     <div className="mainScreen">
       <div className="log">    
       <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<SignIn />} />
-        <Route path="SignUp" element={<SignUp />} />
-      </Routes>
+        <Route exact path="*" component={SignIn} />
+        <Route path="/SignUp" component={SignUp} />
     </BrowserRouter>
     </div>
       <MapChart />
