@@ -1,6 +1,5 @@
-
-import 'reactjs-popup/dist/index.css';
 import "../styles.css"
+import CityData from "./CityData";
 import {
   ComposableMap,
   Geographies,
@@ -8,6 +7,7 @@ import {
   ZoomableGroup,
   Marker
 } from "react-simple-maps";
+import { useState } from "react";
 
 const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/europe.json"
 
@@ -68,8 +68,7 @@ const markers = [
 const clickedCity = (city: string) => {
   console.log(city);
 };
-
-
+ 
 const clickedCountry = (country: string) => {
   let finalUrl= `https://restcountries.com/v3.1/name/${country}?fullText=true`;
   console.log(finalUrl)
@@ -89,6 +88,7 @@ console. log (error) ;
 
 
 const MapChart = () => {
+
   return (
     <ComposableMap
     width={800}
@@ -128,6 +128,7 @@ const MapChart = () => {
         </Marker>
       ))}
       </ZoomableGroup>
+      
     </ComposableMap>
   );
 };
