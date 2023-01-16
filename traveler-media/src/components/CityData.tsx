@@ -3,6 +3,10 @@ import "../styles.css"
 export default function(){
  
   return (
-    <div>Hallo</div>
+    <div>
+        <h1>
+            Hallo
+        </h1>
+    </div>
   )
 }
