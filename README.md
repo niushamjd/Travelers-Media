@@ -1,6 +1,6 @@
 # Travelers-Media Project:
 
-A website to get information of cities aroun Europe and find travelers in similar area 
+A website to get information of cities around Europe and find travelers in similar area 
 
 ## Start Guide:
 
@@ -18,3 +18,12 @@ Run npm install to install dependencies.
 
 Run npm start to start application.
 
+## Technologies Used:
+
+ReactJS
+
+TypeScript
+
+Strapi
+
+Github
