@@ -1,5 +1,4 @@
 import "../styles.css"
-import CityData from "./CityData";
 import {
   ComposableMap,
   Geographies,
@@ -7,7 +6,6 @@ import {
   ZoomableGroup,
   Marker
 } from "react-simple-maps";
-import { useState } from "react";
 
 const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/europe.json"
 
@@ -68,26 +66,42 @@ const markers = [
 const clickedCity = (city: string) => {
   console.log(city);
 };
+
+
+
+const MapChart = (props:any) => {
+   const ClickedCountry = (country: string) => {
+    
+    let finalUrl= `https://restcountries.com/v3.1/name/${country}?fullText=true`;
+    const countryInfo = {
+      name: '',
+      capital: '',
+      Image: '',
+      population: 0,
+      currencies: '',
+      languages: '',
+      
+    }
+    
+    fetch (finalUrl)
+  .then ( (response) => response .json ())
+  .then ( (data) => {
+  countryInfo.name = data[0].name.common;
+  countryInfo.capital = data[0].capital[0];
+  countryInfo.Image = data[0].flags.svg;
+  countryInfo.population = data[0].population;
+  countryInfo.currencies = data[0].currencies[Object.keys(data[0].currencies)[0]].name +" - "+ Object.keys(data [0] .currencies)[0];
+  countryInfo.languages = Object.values(data[0].languages).toString().split(",").join(", ");
+  props.sendData(countryInfo);
  
-const clickedCountry = (country: string) => {
-  let finalUrl= `https://restcountries.com/v3.1/name/${country}?fullText=true`;
-  console.log(finalUrl)
-  fetch (finalUrl)
-.then ( (response) => response .json ())
-.then ( (data) => {
-console. log (data [0]) ;
-console. log (data [0] .capital[0]) 
-console. log (Object.keys(data [0] .currencies)[0]);
-console. log (data [0] .currencies[Object.keys(data [0] .currencies)[0]] .name);
-console.log(Object.values(data[0].languages).toString().split(",").join(", "));
-})
-.catch ( (error) => {
-console. log (error) ;
-})
-};
-
-
-const MapChart = () => {
+  })
+  .catch ( (error) => {
+  console. log (error) ;
+  })
+  
+  };
+  
+  
 
   return (
     <ComposableMap
@@ -104,7 +118,7 @@ const MapChart = () => {
         {({ geographies }) =>
           geographies.map((geo) => (
             <Geography
-              onClick={() => clickedCountry(geo.properties.geounit)}
+              onClick={() => ClickedCountry(geo.properties.geounit)}
               key={geo.rsmKey}
               geography={geo}
               fill="#EAEAEC"
