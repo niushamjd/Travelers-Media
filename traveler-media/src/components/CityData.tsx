@@ -1,4 +1,5 @@
 import "../styles.css"
+<<<<<<< HEAD
 
 
 const CityData= (props:any) => {
@@ -11,6 +12,16 @@ const CityData= (props:any) => {
               </div>
           </form>
       </div>
+=======
+export default function(){
+ 
+  return (
+    <div>
+        <h1>
+            Hallo
+        </h1>
+    </div>
+>>>>>>> 79a1bda1103e7dcd8037faea22c63a4a26f26026
   )
   }
   else 
