@@ -63,25 +63,30 @@ const markers = [
 { markerOffset: 4, name: "San Marino", coordinates: [12.45, 43.93] },
 { markerOffset: 4, name: "Vatican City", coordinates: [12.45, 41.9] }
 ];
-const clickedCity = (city: string) => {
-  console.log(city);
-};
+
 
 
 
 const MapChart = (props:any) => {
+  const countryInfo = {
+    name: '',
+    capital: '',
+    Image: '',
+    population: 0,
+    currencies: '',
+    languages: '',
+    clickedCity: '',
+    
+  }
+  const clickedCity = (city: string) => {
+    countryInfo.clickedCity = city;
+    console.log(countryInfo.clickedCity);
+    props.sendData(countryInfo);
+  };
    const ClickedCountry = (country: string) => {
     
     let finalUrl= `https://restcountries.com/v3.1/name/${country}?fullText=true`;
-    const countryInfo = {
-      name: '',
-      capital: '',
-      Image: '',
-      population: 0,
-      currencies: '',
-      languages: '',
-      
-    }
+ 
     
     fetch (finalUrl)
   .then ( (response) => response .json ())

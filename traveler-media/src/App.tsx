@@ -23,11 +23,13 @@ import ChatScreen from "./components/ChatScreen";
     population: 0,
     currencies: '',
     languages: '',
+    clickedCity: '',
   })
+
 
   const sendData = (data:any) => {
     setData(data)
-    
+    console.log(data)
   }
   return (
     <div className="mainScreen">
@@ -37,7 +39,7 @@ import ChatScreen from "./components/ChatScreen";
         <Route path="/SignIn" component={SignIn} />
         <Route  path="/SignUp" component={SignUp} />
         <Route  path="/CityData" component={() => <CityData props={data} />}/>
-        <Route  path="/ShowProfile" component={ShowProfiles} />
+        <Route  path="/ShowProfile" component={() => <ShowProfiles props={data} />} />
         <Route path="/ChatScreen" component={ChatScreen} />
     </BrowserRouter>
     </div>
