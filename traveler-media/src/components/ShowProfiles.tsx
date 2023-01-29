@@ -4,7 +4,8 @@ import profileImage from '../ProfilePicture.jpg';
 
 
 
-function App() {
+function ShowProfiles(props:any) {
+  console.log(props.props.clickedCity);
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetchData();
@@ -15,8 +16,7 @@ function App() {
     setUsers(data);
   }
   
-  const [selectedcity, setSelectedcity] = useState('?');
-  
+  const [selectedcity, setSelectedcity] = useState(props.props.clickedCity);
   const [filteredUsers, setFilteredUsers] = useState(users);
 
   
@@ -24,13 +24,13 @@ function App() {
 
   function handleSelect(event: { target: { value: any; }; }) {
 
-    
+
     if(event.target.value === 'All') {
       setSelectedcity('All');
       setFilteredUsers(users);
       return;
     }
-    setSelectedcity(event.target.value);
+
     setFilteredUsers(users.filter(user => user['cityName'] === event.target.value));
   }
 
@@ -58,4 +58,4 @@ function App() {
   );
 }
 
-export default App;
+export default ShowProfiles;
