@@ -5,7 +5,6 @@ export default function() {
     e.preventDefault()
     console.log("submit")
   }
-
   return (
     <div className="chatFormContainer">
       <form className="chatForm">
