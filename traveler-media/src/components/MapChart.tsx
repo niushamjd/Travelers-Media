@@ -80,7 +80,6 @@ const MapChart = (props:any) => {
   }
   const clickedCity = (city: string) => {
     countryInfo.clickedCity = city;
-    console.log(countryInfo.clickedCity);
     props.sendData(countryInfo);
   };
    const ClickedCountry = (country: string) => {

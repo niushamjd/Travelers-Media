@@ -25,8 +25,6 @@ import ChatScreen from "./components/ChatScreen";
     languages: '',
     clickedCity: '',
   })
-
-
   const sendData = (data:any) => {
     setData(data)
     console.log(data)

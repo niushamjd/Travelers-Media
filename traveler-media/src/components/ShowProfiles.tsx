@@ -5,7 +5,6 @@ import profileImage from '../ProfilePicture.jpg';
 
 
 function ShowProfiles(props:any) {
-  console.log(props.props.clickedCity);
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetchData();
@@ -16,36 +15,16 @@ function ShowProfiles(props:any) {
     setUsers(data);
   }
   
-  const [selectedcity, setSelectedcity] = useState(props.props.clickedCity);
   const [filteredUsers, setFilteredUsers] = useState(users);
-
   
-  const cities = users.map(user => user['cityName']).filter((city, index, self) => self.indexOf(city) === index);
-
-  function handleSelect(event: { target: { value: any; }; }) {
-
-
-    if(event.target.value === 'All') {
-      setSelectedcity('All');
-      setFilteredUsers(users);
-      return;
-    }
-
-    setFilteredUsers(users.filter(user => user['cityName'] === event.target.value));
-  }
+  useEffect(() => {
+    setFilteredUsers(users.filter(user => user['cityName'] === props.props.clickedCity));
+  }, [props.props.clickedCity, users]);
 
   return (
     <div>
-      <label>
-        Select a city:
-        <select value={selectedcity} onChange={handleSelect}>
-          <option value="All">All</option>
-          {cities.map(city => (
-            <option key={city} value={city}>{city}</option>
-          ))}
-        </select>
-      </label>
-      <h2>Users in {selectedcity}:</h2>
+      <h1>Select a city on the map</h1>
+      <h2>Users in {props.props.clickedCity}:</h2>
       <ul>
       {filteredUsers.map(user => (
         <div key={user['username']} style={{ display: "flex", alignItems: "left"}}>
