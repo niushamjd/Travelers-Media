@@ -8,7 +8,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 import { useState } from "react";
 
 import MapChart from "./components/MapChart";
-import CityData from "./components/CityData";
+import CountryData from "./components/CountryData";
 import StartPage from "./components/StartPage";
 
 import ShowProfiles from "./components/ShowProfiles";
@@ -36,7 +36,7 @@ import ChatScreen from "./components/ChatScreen";
         <Route exact path="/" component={StartPage} />
         <Route path="/SignIn" component={SignIn} />
         <Route  path="/SignUp" component={SignUp} />
-        <Route  path="/CityData" component={() => <CityData props={data} />}/>
+        <Route  path="/CountryData" component={() => <CountryData props={data} />} />
         <Route  path="/ShowProfile" component={() => <ShowProfiles props={data} />} />
         <Route path="/ChatScreen" component={ChatScreen} />
     </BrowserRouter>

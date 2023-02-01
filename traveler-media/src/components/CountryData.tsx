@@ -1,7 +1,14 @@
 import "../styles.css"
+import TravelerImg from "../images/traveler.jpg"
+import { useHistory } from "react-router-dom";
 
 
-const CityData= (props:any) => {
+const CountryData= (props:any) => {
+   const history = useHistory();
+    if(props.props.clickedCity !== ''){
+       history.push('/ShowProfile')
+       history.go(0)
+    }
   if(props.props.name === ''){
     return (
       <div className="Auth-form-container">
@@ -29,4 +36,4 @@ const CityData= (props:any) => {
       </div>
   )
 }
-export default CityData;
+export default CountryData;

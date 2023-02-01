@@ -1,10 +1,12 @@
 import React from "react"
 import "../styles.css"
+import { AuthContext } from "../context/AuthContext"
 export default function() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log("submit")
   }
+const { user }: any = React.useContext(AuthContext)
   return (
     <div className="chatFormContainer">
       <form className="chatForm">
@@ -12,33 +14,11 @@ export default function() {
           <h3 className="chatFormTitle">Chat</h3>
 
           <div className="form-group mt-3">
-            <label className="userLeft">Deniz</label>
+            <label className="userLeft">{user?.username}</label>
             <p className="form-control mt-1">
               Hey, where are you?
             </p>
           </div>
-
-          <div className="form-group mt-3">
-            <label className="userRight">Nyusha</label>
-            <p className="form-control mt-1">
-              Hey, I am on my way to Istanbul in Turkey!
-            </p>
-          </div>
-
-          <div className="form-group mt-3">
-            <label className="userLeft">Deniz</label>
-            <p className="form-control mt-1">
-              Oh that sounds great, I would also like to see Istanbul. Can I join your trip?
-            </p>
-          </div>
-
-          <div className="form-group mt-3">
-            <label className="userRight">Nyusha</label>
-            <p className="form-control mt-1">
-              Yes for sure.
-            </p>
-          </div>
-
           <div className="form-group mt-3">
             <label className="userLeft">Deniz</label>
             <input

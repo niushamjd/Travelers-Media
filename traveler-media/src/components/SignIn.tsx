@@ -54,7 +54,8 @@ const SignIn = () => {
 
         message.success(`Welcome back ${data.user.username}!`);
 
-        history.push("/chatScreen", { replace: true });
+        history.push("/countrydata", { replace: true });
+        history.go(0)
       }
     } catch (error:any) {
       console.error(error);

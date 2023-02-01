@@ -49,7 +49,8 @@ const SignUp = () => {
 
         message.success(`Welcome to Traveler Media ${data.user.username}!`);
 
-        history.push("/profile", { replace: true });
+        history.push("/countryData", { replace: true });
+        history.go(0)
       }
     } catch (error: any) {
       console.error(error);
@@ -112,7 +113,9 @@ const SignUp = () => {
               >
                 <Input.Password placeholder="Password" />
               </Form.Item>
-
+              <Form.Item label="City" name="cityName">
+                <Input placeholder="Current city" />
+                </Form.Item>
               <Form.Item>
                 <Button
                   type="primary"

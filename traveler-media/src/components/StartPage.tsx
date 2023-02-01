@@ -1,4 +1,4 @@
-import undrawTravel from './undraw_traveling_qio0.svg';
+import undrawTravel from '../images/undraw_traveling_qio0.svg';
 export default function() {
     return (
         <div className="travel-container">
