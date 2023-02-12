@@ -1,12 +1,14 @@
 import "../styles.css"
-import TravelerImg from "../images/traveler.jpg"
 import { useHistory } from "react-router-dom";
+
+
 
 
 const CountryData= (props:any) => {
    const history = useHistory();
     if(props.props.clickedCity !== ''){
-       history.push('/ShowProfile')
+    
+       history.push(`/ShowProfile/${props.props.clickedCity}`)
        history.go(0)
     }
   if(props.props.name === ''){

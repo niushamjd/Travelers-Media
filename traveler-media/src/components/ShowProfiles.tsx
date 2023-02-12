@@ -4,9 +4,14 @@ import profileImage from '../images/ProfilePicture.jpg';
 
 
 
-
-
 function ShowProfiles(props:any) {
+  //const history = useHistory();
+
+
+  const url = window.location.href;
+  const parts = url.split('/');
+let city = parts[parts.length - 1];
+
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetchData();
@@ -18,13 +23,16 @@ function ShowProfiles(props:any) {
   }
   
   const [filteredUsers, setFilteredUsers] = useState(users);
-  const history = useHistory();
+  if(props.props.clickedCity !="")
+  city = props.props.clickedCity;
   useEffect(() => {
-    setFilteredUsers(users.filter(user => user['cityName'] === props.props.clickedCity));
-  }, [props.props.clickedCity, users]);
+  //  setFilteredUsers(users.filter(user => user['cityName'] === city));
+  //}, [city, users]);
+  setFilteredUsers(users.filter(user => user['cityName'] === props.props.clickedCity));
+}, [props.props.clickedCity, users]);
   function chatWithUser() {
-    history.push('/chatscreen');
-    history.go(0);
+   // history.push('/chatscreen');
+   // history.go(0);
   }
   return (
     <div>
