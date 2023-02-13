@@ -11,7 +11,8 @@ const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/co
 
 const markers = [
     { markerOffset: 4, name: "Bucharest", coordinates: [26.1, 44.4] },
-    { markerOffset: 4, name: "Budapest", coordinates: [19.03, 44.5] },
+    { markerOffset: 4, name: "Budapest", coordinates: [19.03, 47.5] },
+    { markerOffset: 4, name: "Bratislava", coordinates: [17.8, 48.13] },
     { markerOffset: 4, name: "Warsaw", coordinates: [21, 52.25] },
     { markerOffset: 4, name: "Prague", coordinates: [14.25, 50.08] },
     { markerOffset: 4, name: "Athens", coordinates: [23.4, 34.98] },
@@ -29,7 +30,7 @@ const markers = [
     { markerOffset: 4, name: "London", coordinates: [-0.13, 51.5] },
     { markerOffset: 4, name: "Amsterdam", coordinates: [4.9, 52.35] },
     { markerOffset: 4, name: "Rome", coordinates: [12.5, 41.9] },
-    { markerOffset: 4, name: "Zagreb", coordinates: [4.98, 45.8] },
+    { markerOffset: 4, name: "Zagreb", coordinates: [14.98, 45.8] },
     { markerOffset: 4, name: "Tirana", coordinates: [19.82, 41.33] },
     { markerOffset: 4, name: "Vienna", coordinates: [16.34, 48.21] },
     { markerOffset: 4, name: "Ljubljana", coordinates: [14.51, 46.05] },
@@ -61,7 +62,7 @@ const markers = [
 { markerOffset: 4, name: "Galway", coordinates: [-9.07, 53.27] },
 { markerOffset: 4, name: "Luxembourg City", coordinates: [6.13, 49.61] },
 { markerOffset: 4, name: "San Marino", coordinates: [12.45, 43.93] },
-{ markerOffset: 4, name: "Vatican City", coordinates: [12.45, 41.9] }
+{ markerOffset: 4, name: "Vatican City", coordinates: [12.45, 42.5] }
 ];
 
 
