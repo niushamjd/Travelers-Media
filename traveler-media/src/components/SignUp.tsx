@@ -127,7 +127,7 @@ const SignUp = () => {
               </Form.Item>
             </Form>
             <Typography.Paragraph className="form_help_text">
-              Already have an account? <Link to="/signin">Sign In</Link>
+              Already have an account? <a href="./SignIn">Sign In</a>
             </Typography.Paragraph>
           </Card>
         </Col>

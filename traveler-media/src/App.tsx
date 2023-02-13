@@ -35,16 +35,17 @@ import ChatScreen from "./components/ChatScreen";
       <BrowserRouter>
         <Route exact path="/" component={StartPage} />
         <Route path="/SignIn" component={SignIn} />
-        <Route  path="/SignUp" component={SignUp} />
-        <Route  path="/CountryData" component={() => <CountryData props={data} />} />
-        <Route  path="/ShowProfile" component={() => <ShowProfiles props={data} />} />
+        <Route path="/SignUp" component={SignUp} />
+        <Route path="/CountryData" component={() => <CountryData props={data} />} />
+        <Route path="/ShowProfile" component={() => <ShowProfiles props={data} />} />
         <Route path="/ChatScreen" component={ChatScreen} />
-    </BrowserRouter>
-    </div>
+      </BrowserRouter>
+      </div>
       <MapChart sendData={sendData} />
     </div>
   );
 }
+
 export default App;
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
