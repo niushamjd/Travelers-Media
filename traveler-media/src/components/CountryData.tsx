@@ -1,12 +1,14 @@
 import "../styles.css"
-import TravelerImg from "../images/traveler.jpg"
 import { useHistory } from "react-router-dom";
+
+
 
 
 const CountryData= (props:any) => {
    const history = useHistory();
+   const url=`/ShowProfile/${props.props.clickedCity}`
     if(props.props.clickedCity !== ''){
-       history.push('/ShowProfile')
+       history.push(url)
        history.go(0)
     }
   if(props.props.name === ''){
@@ -24,6 +26,8 @@ const CountryData= (props:any) => {
   return (
       <div className="Auth-form-container">
           <form className="Auth-form">
+
+          <div className="Auth-form-title">Choose a city on the map to see who's there</div>
               <div className="Auth-form-content">
                   <h3 className="Auth-form-title"><img src={props.props.Image}  className="flag-img"/></h3>
                   <h2 className="Country-name">{props.props.name}</h2>

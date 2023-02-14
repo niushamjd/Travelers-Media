@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_coordinates_coordinates",
+  "info": {
+    "displayName": "Coordinates"
+  },
+  "options": {},
+  "attributes": {
+    "Longitude": {
+      "type": "decimal",
+      "required": true
+    },
+    "Latitude": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

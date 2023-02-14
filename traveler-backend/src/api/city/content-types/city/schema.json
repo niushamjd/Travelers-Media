@@ -4,7 +4,8 @@
   "info": {
     "singularName": "city",
     "pluralName": "cities",
-    "displayName": "City"
+    "displayName": "City",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,17 @@
   "pluginOptions": {},
   "attributes": {
     "cityName": {
-      "type": "text"
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 30
+    },
+    "Coordinates": {
+      "displayName": "Coordinates",
+      "type": "component",
+      "repeatable": false,
+      "component": "coordinates.coordinates",
+      "required": true
     }
   }
 }
