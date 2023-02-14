@@ -18,9 +18,9 @@
 flex-direction: row;
  position: relative;
 top: 0;
+margin-left: 5px;
 height: fit-content;
 width: 100%;
-
 }
 .flag-img {
   display: block;
@@ -122,9 +122,13 @@ width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 0;
-  height: fit-content;
+  top: 10px;
+  height: 100vh;
   width: 100%;
+}
+.btn-secondary {
+  margin-top: 20%;
+  margin-left: 15%;
 }
 
 .chatFormContainer {
@@ -144,7 +148,13 @@ width: 100%;
   border-radius: 8px;
   background-color: white;
 }
-
+.chatFormTitle {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: 600;
+}
 .chatFormContent {
   padding-left: 12%;
   padding-right: 12%;
@@ -152,14 +162,6 @@ width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   height:100%;
-}
-
-.chatFormTitle {
-  text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
-  color: rgb(34, 34, 34);
-  font-weight: 800;
 }
 
 .userLeft {
@@ -178,7 +180,8 @@ width: 100%;
   height: max-content;
   padding-left: 12%;
   padding-right: 12%;
-  margin-bottom: 10px;
+  position: absolute;
+  bottom: 25px;
 }
 
 .backToMapScreen {
