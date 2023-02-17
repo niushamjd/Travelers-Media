@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: white;
 }
 
 .App-logo {
@@ -17,9 +18,16 @@
 flex-direction: row;
  position: relative;
 top: 0;
+margin-left: 5px;
 height: fit-content;
 width: 100%;
-
+}
+.flag-img {
+  display: block;
+  width: 45%;
+  height: 45%;
+  min-width: 7.5em;
+  margin: 1.8em auto 1.2em auto;
 }
 .Mcontainer {
   display: flex;
@@ -71,9 +79,6 @@ width: 100%;
     transform: rotate(360deg);
   }
 }
-.App {
-  background-color: white;
-}
 
 .Auth-form-container {
   display: flex;
@@ -95,14 +100,97 @@ width: 100%;
 .Auth-form-content {
   padding-left: 12%;
   padding-right: 12%;
+  cursor: pointer;
 }
 
 .Auth-form-title {
   text-align: center;
   margin-bottom: 1em;
+  font-size: 17px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.Country-name {
+  text-align: center;
+  margin-bottom: 1em;
   font-size: 24px;
   color: rgb(34, 34, 34);
   font-weight: 800;
+}
+.travel-container {
+  margin-left: 20 px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 10px;
+  height: 100vh;
+  width: 100%;
+}
+.btn-secondary {
+  margin-top: 20%;
+  margin-left: 15%;
+}
+
+.chatFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.chatForm {
+  width: 80%;
+  height: 95%;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 8px;
+  background-color: white;
+}
+.chatFormTitle {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: 600;
+}
+.chatFormContent {
+  padding-left: 12%;
+  padding-right: 12%;
+  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height:100%;
+}
+
+.userLeft {
+  display: inline-block;
+  text-align: left;
+  padding-left: 1px;
+}
+
+.userRight {
+  display: inline-block;
+  text-align: right;
+  padding-right: 1px;
+}
+
+.chatFormFooter {
+  height: max-content;
+  padding-left: 12%;
+  padding-right: 12%;
+  position: absolute;
+  bottom: 25px;
+}
+
+.backToMapScreen {
+  /*display: inline-block;
+  height: auto;
+  vertical-align: bottom; */
+  margin-bottom: 10px;
 }
 
 label {
