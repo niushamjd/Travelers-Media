@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import profileImage from '../images/ProfilePicture.jpg';
+import undrawTTogether from '../images/undraw_travelers_re_y25a.svg'
 
 
 
@@ -46,7 +47,9 @@ let city = parts[parts.length - 1];
         
       </div>
         ))}
+        
       </ul>
+      <img src={undrawTTogether} alt="Travelers pic" style={{width: "450px"}} />
     </div>
   );
 }
