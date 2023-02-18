@@ -7,7 +7,7 @@ The Travelers-Media project is a web-based application designed to connect trave
 Pull main branch of this repo.
 
 Navigate to traveler-backend for backend, make sure to copy the content of .env.notes file into a .enc file on your computer.
-$cd traveler-backend
+```cd traveler-backend```
 
 Run npm install to install dependencies.
 $npm install
