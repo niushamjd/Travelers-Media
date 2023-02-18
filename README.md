@@ -10,19 +10,19 @@ Navigate to traveler-backend for backend, make sure to copy the content of .env.
 ```cd traveler-backend```
 
 Run npm install to install dependencies.
-$npm install
+```npm install```
 
 Run npm run develop to start backend server.
-$npm run develop
+```npm run develop```
 
 Navigate to traveler-media for frontend.
-$cd traveler-backend
+```cd traveler-backend```
 
 Run npm install to install dependencies.
-$npm install
+```npm install```
 
 Run npm start to start application.
-$npm start
+```npm start```
 
 ## Technologies Used:
 
