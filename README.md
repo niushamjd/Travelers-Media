@@ -16,7 +16,7 @@ Run npm run develop to start backend server.
 ```npm run develop```
 
 Navigate to traveler-media for frontend.
-```cd traveler-backend```
+```cd traveler-media```
 
 Run npm install to install dependencies.
 ```npm install```
